@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  title: API de busqueda
+  description: Esta api es para realizar busquedas entre multiples servicios.
+  version: 0.1.9
+servers:
+  - url: http://localhost:3001/
+   
+paths:
+  /search:
+    get:
+      summary: Retorna resultados de busqueda.
+      description: la busqueda se realizara entre 3 servicios y los se unifacaran en un standard .
+      parameters:
+        - in: query
+          name: query
+          schema:
+            type: string
+          required: true
+          description: El contenido de la busqueda
+        - in: query
+          name: limit
+          schema:
+            type: integer
+          required: false
+          description: El limite de los resultados por servicio
+
+      responses:
+        '200':    # status code
+          description: Un arreglo de objetos JSON con el siguiente esquema
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  type: object
+                  properties:
+                    source:
+                      type: string
+                      description: La fuente del servicio del recurso.
+                    tipo:
+                      type: string
+                      description: El tipo de recurso.
+                    img:
+                      type: string
+                      description: Url de la imagen del recurso.
+                    titulo:
+                      type: string
+                      description: El titulo del recurso.
+                    descripcion:
+                      type: string
+                      description: Informacion adicional del recurso.
