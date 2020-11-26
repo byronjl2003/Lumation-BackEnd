@@ -6,7 +6,8 @@ Este proyecto  consiste en una API Rest para la centralizacion de busquedas de s
 ---
 ## Mas detalles de la aplicacion
 La API solo pose una ruta llamada "search" que responde al verbo http GET con el resultado de la busqueda solicitada. Esta ruta no requiere de autenticacion para poder acceder a los recursos expuestos.
-
+### Documentacion
+Para la documentacion de la api se puede consultar la documentacion creada con la herramienta swagger. La documentacion estara disposible en el siguiente enlace, luego de iniciar la aplicacion http://localhost:3001/api-docs/
 ## Requerimientos
 
 Para entornos de desarrollo solo se necesitara de Nodejs instalado en tu equipo, asi como tambien los siguientes paquetes:
